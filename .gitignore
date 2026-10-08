@@ -1,0 +1,57 @@
+# Generated build and package outputs.
+target/
+/out/
+/build/
+/dist/
+
+# Local language/tool caches and test reports.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+*.egg-info/
+.coverage
+.coverage.*
+htmlcov/
+/coverage/
+
+# Runtime logs, captures, and profiling output (source fixtures stay visible).
+/*.log
+/logs/
+/screenshots/
+/captures/
+/latency-*.jsonl
+/trace-*.json
+/trace-*.jsonl
+/profile-*.json
+/profile-*.jsonl
+*.profraw
+*.profdata
+/*.prof
+/perf.data
+/perf.data.*
+/flamegraph*.svg
+
+# Local scratch work and editor/OS temporary files.
+/scratch/
+/tmp/
+/.local/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Loose VM/firmware outputs; checked-in configs and build/VM tools remain source.
+/*.iso
+/*.img
+/*.qcow2
+/*.vmdk
+/*.vdi
+/*.efi
+/OVMF_VARS*.fd

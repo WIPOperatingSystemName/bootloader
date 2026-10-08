@@ -1,0 +1,12 @@
+[package]
+name = "telorgon-boot-splash"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "boot-splash"
+path = "src/main.rs"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+telorgon = { workspace = true, features = ["boot-splash-linux"] }

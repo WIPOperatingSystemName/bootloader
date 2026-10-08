@@ -1,0 +1,27 @@
+theme = "disks"
+selection = "always"
+default = "alpine"
+
+[[targets]]
+id = "alpine"
+name = "Alpine Linux"
+kind = "linux"
+detail = "3.24.2 · live console"
+image = '\EFI\Linux\alpine\kernel.efi'
+arguments = 'initrd=\EFI\Linux\alpine\initrd.img modules=loop,squashfs,sd-mod,usb-storage console=tty0 console=ttyS0,115200'
+
+[[targets]]
+id = "tinycore"
+name = "Tiny Core"
+kind = "linux"
+detail = "Pure64 17.1 · live desktop"
+image = '\EFI\Linux\tinycore\kernel.efi'
+arguments = 'initrd=\EFI\Linux\tinycore\initrd.img loglevel=3 cde console=tty0 console=ttyS0,115200n8'
+
+[[targets]]
+id = "talos"
+name = "Talos Linux"
+kind = "linux"
+detail = "1.14.1 · maintenance dashboard"
+image = '\EFI\Linux\talos\kernel.efi'
+arguments = 'talos.platform=metal console=tty0 slab_nomerge pti=on consoleblank=0 printk.devkmsg=on selinux=1 module.sig_enforce=1 proc_mem.force_override=never console=ttyS0,115200n8'

@@ -1,0 +1,12 @@
+[package]
+name = "telorgon-boot-efi"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "boot-efi"
+path = "src/main.rs"
+
+[target.'cfg(target_os = "uefi")'.dependencies]
+telorgon = { workspace = true, features = ["boot-uefi"] }

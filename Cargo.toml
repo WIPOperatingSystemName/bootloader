@@ -1,0 +1,25 @@
+[workspace]
+members = [
+    "crates/telorgon-boot-preview",
+    "crates/telorgon-boot-efi",
+    "crates/telorgon-boot-splash",
+]
+default-members = ["crates/telorgon-boot-preview"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0-or-later"
+
+[workspace.dependencies]
+telorgon = { path = "../telorgon/crates/telorgon", default-features = false }
+image = { version = "0.25.10", default-features = false, features = ["bmp", "gif", "ico", "jpeg", "png", "webp"] }
+
+# Cargo applies patches from the consuming workspace. Use the SDK's UEFI-safe
+# scalar implementations when Telorgon is built as a path dependency.
+[patch.crates-io]
+simd-adler32 = { path = "../telorgon/third_party/patches/simd-adler32" }
+zune-jpeg = { path = "../telorgon/third_party/patches/zune-jpeg" }
+moxcms = { path = "../telorgon/third_party/patches/moxcms" }
+cosmic-text = { path = "../telorgon/third_party/patches/cosmic-text" }

@@ -1,0 +1,24 @@
+theme = "disks"
+default = "linux"
+
+[[targets]]
+id = "linux"
+name = "Linux"
+kind = "linux"
+detail = "Linux EFI kernel or unified kernel image"
+image = '\EFI\Linux\linux.efi'
+# arguments = "quiet root=UUID=your-root-partition"
+
+[[targets]]
+id = "windows"
+name = "Windows"
+kind = "windows"
+detail = "Windows Boot Manager"
+image = '\EFI\Microsoft\Boot\bootmgfw.efi'
+
+[[targets]]
+id = "my-os"
+name = "My OS"
+kind = "custom"
+detail = "Your custom EFI loader"
+image = '\EFI\MyOS\loader.efi'
