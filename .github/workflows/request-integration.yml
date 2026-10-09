@@ -1,0 +1,14 @@
+name: Request distro integration
+
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, reopened, ready_for_review, synchronize, edited]
+
+permissions: {}
+
+jobs:
+  request:
+    uses: WIPOperatingSystemName/.github/.github/workflows/request-integration.yml@main
+    secrets:
+      INTEGRATION_DISPATCH_TOKEN: ${{ secrets.INTEGRATION_DISPATCH_TOKEN }}
