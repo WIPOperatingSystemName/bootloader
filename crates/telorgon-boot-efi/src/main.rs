@@ -30,7 +30,13 @@ fn main() {
         let mut config = BootConfig::from_toml(text)?;
         let _warnings = config
             .load_artwork(|path, offset, length| firmware.read_file_range(path, offset, length));
-        config.application()?.build()?.run_uefi(&firmware)?;
+        config.application()?.build()?.run_uefi_with(
+            &firmware,
+            telorgon::host::uefi::UefiBootOptions {
+                preferred_resolution: Some((1280, 720)),
+                ..Default::default()
+            },
+        )?;
         Ok(())
     })();
     if let Err(error) = result {

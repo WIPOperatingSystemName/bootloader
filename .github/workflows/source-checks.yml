@@ -1,0 +1,16 @@
+name: Source checks
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  source-checks:
+    uses: WIPOperatingSystemName/.github/.github/workflows/source-checks.yml@main
+    with:
+      base-sha: ${{ github.event.pull_request.base.sha || github.event.before || '' }}
